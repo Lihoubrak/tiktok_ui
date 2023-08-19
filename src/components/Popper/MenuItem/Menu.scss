@@ -1,0 +1,105 @@
+.list-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.item {
+  padding: 10px 8px 10px 16px;
+  color: rgb(22, 24, 35);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.03px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+}
+.item-icon {
+  margin-right: 8px;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  font-size: 1.8rem;
+}
+
+.dark-mode {
+  width: 44px;
+  height: 24px;
+  background: rgba(22, 24, 35, 0.12);
+  border-radius: 100px;
+  position: absolute; /* Change position to relative */
+  top: 139px;
+  right: 14px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    left: 2px;
+    top: 7%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25%; /* Adjust the right value to position the second ::after element */
+    transform: translate(50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    display: none; /* Initially hide the ::after element */
+  }
+
+  &.active {
+    background: rgb(11, 224, 155);
+    /* Change background color for dark mode */
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    &::before {
+      display: none; /* Hide ::before when active */
+    }
+    &::after {
+      display: block; /* Show ::after when active */
+    }
+  }
+  &.user {
+    top: 386px;
+    right: 14px;
+  }
+}
+.header-language {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  cursor: pointer;
+}
+.hearder-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.03px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header-icon {
+  margin-left: 28px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
