@@ -39,11 +39,30 @@ html {
   src: url("/assets/fonts/TikTokFont-Semibold.woff2");
   font-weight: 600;
 }
+//scroll
+/* Customize the scrollbar track and thumb for all elements */
+* {
+  scrollbar-color: rgba(22, 24, 35, 0.06) transparent;
+  scrollbar-width: thin;
+}
+
+/* Style the thumb separately */
+*::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(22, 24, 35, 0.06);
+}
+
+/* Reset the scrollbar track styling for non-webkit browsers */
+*::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 body {
   font-family: "Roboto", sans-serif, Arial, Tahoma, PingFangSC;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  overflow-y: overlay;
 }
 button,
 input,

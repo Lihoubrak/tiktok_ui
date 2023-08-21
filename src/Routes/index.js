@@ -3,13 +3,13 @@ import Following from "../Page/Following";
 import Upload from "../Page/Upload";
 import Profile from "../Page/Profile";
 import Search from "../Page/Search";
-
+import { configRouter } from "../config/route";
 const publicRoutes = [
-  { path: "/", component: Home },
-  { path: "/profile", component: Profile },
-  { path: "/following", component: Following },
-  { path: "/upload", component: Upload, layout: null },
-  { path: "/search", component: Search, layout: null },
+  { path: configRouter.home, component: Home },
+  { path: configRouter.Profile, component: Profile },
+  { path: configRouter.following, component: Following },
+  { path: configRouter.upload, component: Upload, layout: null },
+  { path: configRouter.search, component: Search, layout: null },
 ];
 
 const privateRoutes = [];

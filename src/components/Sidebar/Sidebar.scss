@@ -1,7 +1,19 @@
 .sidebar {
   width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin-top: 60px;
 }
 .sidebar-inner {
-  padding: 20px 0 26px;
-  padding-left: 8px;
+  padding: 20px 0 26px 8px;
+}
+.headers {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.03px;
+  padding: 7px 10px;
+  margin-top: 8px;
 }

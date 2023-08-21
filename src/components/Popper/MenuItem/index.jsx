@@ -23,7 +23,7 @@ const MenuItem = ({ Menu, currentMenu, setCurrentMenu, currentUser }) => {
   };
 
   return (
-    <ul className={cx("list-item")}>
+    <>
       {TitleMode && (
         <div className={cx("header-language")}>
           <div className={cx("header-icon")} onClick={handleBackClick}>
@@ -32,31 +32,34 @@ const MenuItem = ({ Menu, currentMenu, setCurrentMenu, currentUser }) => {
           <p className={cx("hearder-title")}>Language</p>
         </div>
       )}
-      {subMenu.map((item, index) => (
-        <li
-          key={index}
-          className={cx("item")}
-          onClick={() => handleItemClick(item)}
-        >
-          {TitleMode ? null : (
-            <span className={cx("item-icon")}>{item.icon}</span>
-          )}
-          {item.darkMode ? (
-            <div>
-              {item.title}
-              <div
-                className={cx(`dark-mode ${currentUser ? "user" : ""}`, {
-                  active: darkMode,
-                })}
-                onClick={() => setDarkMode(!darkMode)}
-              ></div>
-            </div>
-          ) : (
-            <div className={cx("title")}>{item.title}</div>
-          )}
-        </li>
-      ))}
-    </ul>
+
+      <ul className={cx("list-item")}>
+        {subMenu.map((item, index) => (
+          <li
+            key={index}
+            className={cx("item")}
+            onClick={() => handleItemClick(item)}
+          >
+            {TitleMode ? null : (
+              <span className={cx("item-icon")}>{item.icon}</span>
+            )}
+            {item.darkMode ? (
+              <div>
+                {item.title}
+                <div
+                  className={cx(`dark-mode ${currentUser ? "user" : ""}`, {
+                    active: darkMode,
+                  })}
+                  onClick={() => setDarkMode(!darkMode)}
+                ></div>
+              </div>
+            ) : (
+              <div className={cx("title")}>{item.title}</div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 
